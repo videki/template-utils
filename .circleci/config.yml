@@ -8,9 +8,9 @@ jobs:
       - checkout
       - run: mvn --quiet clean install
       - store_test_results:
-          path: /tmp/circleci-test-results
+          path: ~/template-utils/**/target/surefire-reports
       # Save artifacts
       - store_artifacts:
-          path: /tmp/circleci-artifacts
+          path: ~/template-utils/**/target/*.jar
       - store_artifacts:
-          path: /tmp/circleci-test-results
+          path: ~/template-utils/**/target/surefire-reports
